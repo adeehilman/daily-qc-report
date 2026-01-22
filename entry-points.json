@@ -1,0 +1,35 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "114f7e44-87eb-439a-9a06-b3f0231d4ebc",
+      "type": "process"
+    },
+    {
+      "filePath": "Proccess\\Xiaomi - Compile Packing List\\3_FormatPLExcel.xaml",
+      "uniqueId": "c8175b01-7d58-4a9d-ad6c-1fabe314dce6",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "env_In": {
+            "type": "string"
+          },
+          "excelPL_path": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "MiDocsString_Out": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="vCI2o_A5UE-6KRmHzePMGg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.xiaomi.satnusa.com" CVScreenId="205c1d76-08df-4621-898a-67c02b5e63c8" CvTextArea="1838, 173, 46, 20" CvTextArgument="Login" CvType="Text" DesignTimeRectangle="1840, 171, 44, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Login' parentid='__next' tag='P' /&gt;" Guid="aba0a31a-6e3e-4a8e-9d27-35e8788f3494" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="4a3f325a2ab748cb9bb4fc03f3ad0940.png" xmlns="">0i4aO9F4Qn0ezDbbbyv7t4A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

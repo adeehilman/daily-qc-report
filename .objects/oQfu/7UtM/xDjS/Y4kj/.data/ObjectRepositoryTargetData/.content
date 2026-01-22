@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UMpf_V8yxESCZ2ryIckSAg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com" CVScreenId="f3a05a05-2495-45e6-96b1-66d99c142d37" CvElementArea="743, 175, 448, 57" CvType="InputBox" DesignTimeRectangle="802, 189, 301, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='chakra-modal--body-1' tag='DIV' /&gt;" Guid="3a3699d5-ac30-4d87-9621-ad28dace1fe6" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8811505a727d35c41fc1677c2bede0ff.png" xmlns="">05i8AAEnY90GxA_ajCBwr3g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

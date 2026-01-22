@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="jZ_52VttVEqNP24vDyKyBA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/approval-document" CVScreenId="2fb7c858-109c-48f9-b04b-bdaf114d2000" CvElementArea="67, 272, 97, 41" CvTextArea="106, 285, 43, 16" CvTextArgument="Export" CvType="Button" DesignTimeRectangle="72, 276, 88, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Export' parentid='__next' tag='BUTTON' type='button' /&gt;" Guid="87dbbb51-22b3-458c-8b41-57cd8be36b6c" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f102e504600a9f056472ae659c546960.png" xmlns="">08Pa-hhNxNkGYPN0HCXja2A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

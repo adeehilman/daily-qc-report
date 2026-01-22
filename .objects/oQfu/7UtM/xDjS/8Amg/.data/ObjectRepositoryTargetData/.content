@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="EMn2qnIfx0GX7WDq3E7PSQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com" CVScreenId="bbd07734-6a33-4609-b205-30399591e525" CvElementArea="743, 219, 448, 58" CvType="InputBox" DesignTimeRectangle="802, 234, 301, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='chakra-modal--body-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class=' css-ackcql' parentid='chakra-modal--body-1' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="cbdafb12-6e08-4b5f-952f-becc05e02caf" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="598843d614f7129727b9da805577ef36.png" xmlns="">0UYvqxuAS2kWexql0gkQfag</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

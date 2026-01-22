@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge Nusames Xiaomi",
+  "Type": "App",
+  "Id": "oQfu4LDq4UOXgx6yGEvwlA",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/oQfu4LDq4UOXgx6yGEvwlA",
+  "Created": "2025-11-25T04:45:32.5563984Z",
+  "Updated": "2025-11-25T04:45:32.5563984Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

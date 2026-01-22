@@ -1,0 +1,204 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetEnvironmentVariables" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <!-- Input Arguments -->
+    <x:Property Name="configFilePath_In" Type="InArgument(x:String)" />
+    <x:Property Name="environment_In" Type="InArgument(x:String)" />
+    <x:Property Name="credentialAssetName_In" Type="InArgument(x:String)" />
+    <x:Property Name="credentialFolderPath_In" Type="InArgument(x:String)" />
+    <!-- Output Arguments -->
+    <x:Property Name="config_Out" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="username_Out" Type="OutArgument(x:String)" />
+    <x:Property Name="password_Out" Type="OutArgument(ss:SecureString)" />
+    <x:Property Name="isProduction_Out" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>GetEnvironmentVariables_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Helper workflow to get environment variables from config file.&#xA;&#xA;USAGE:&#xA;1. Invoke this workflow with:&#xA;   - configFilePath_In: Path to config txt file&#xA;   - environment_In: &quot;prod&quot; or &quot;dev&quot;&#xA;   - credentialAssetName_In: (Optional) Orchestrator asset name&#xA;   - credentialFolderPath_In: (Optional) Orchestrator folder path&#xA;&#xA;2. Get outputs:&#xA;   - config_Out: Dictionary with all config values&#xA;   - username_Out: Username from credential&#xA;   - password_Out: SecureString password&#xA;   - isProduction_Out: Boolean flag&#xA;&#xA;3. Access config values easily:&#xA;   config_Out(&quot;URL_NUSAMES_DEV&quot;)&#xA;   config_Out(&quot;ANY_KEY_FROM_CONFIG&quot;)" DisplayName="GetEnvironmentVariables" sap:VirtualizedContainerService.HintSize="700,800" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="RawEnvText" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="configDict" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    
+    <!-- Initialize Dictionary -->
+    <Assign DisplayName="Initialize Config Dictionary" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="Assign_Init">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[configDict]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of String, String)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    
+    <!-- Set isProduction Flag -->
+    <Assign DisplayName="Set isProduction Flag" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="Assign_IsProd">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[isProduction_Out]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[environment_In.ToLower() = "prod"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    
+    <!-- Log Environment -->
+    <ui:LogMessage DisplayName="Log Environment" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="LogMessage_Env" Level="Info" Message="[&quot;[&quot; + environment_In.ToUpper() + &quot;] Environment Initialized&quot;]" />
+    
+    <!-- Read Config File -->
+    <TryCatch DisplayName="Try Read Config" sap:VirtualizedContainerService.HintSize="540,400" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Read and Parse Config" sap:VirtualizedContainerService.HintSize="480,300" sap2010:WorkflowViewState.IdRef="Sequence_Read">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          
+          <!-- Read Text File -->
+          <ui:ReadTextFile File="{x:Null}" Content="[RawEnvText]" DisplayName="Read Config File" FileName="[configFilePath_In]" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          
+          <!-- Parse Each Line -->
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Parse Config Lines" sap:VirtualizedContainerService.HintSize="450,200" sap2010:WorkflowViewState.IdRef="ForEach_1" Values="[RawEnvText.Split(Environment.NewLine.ToCharArray, StringSplitOptions.RemoveEmptyEntries)]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="x:String">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:String" Name="line" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Process Line" sap:VirtualizedContainerService.HintSize="450,150" sap2010:WorkflowViewState.IdRef="Sequence_Line">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="key" />
+                    <Variable x:TypeArguments="x:String" Name="value" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[line.Contains(&quot;=&quot;)]" DisplayName="Check Valid Config Line" sap:VirtualizedContainerService.HintSize="420,100" sap2010:WorkflowViewState.IdRef="If_Valid">
+                    <If.Then>
+                      <ui:MultipleAssign DisplayName="Parse Key-Value" sap:VirtualizedContainerService.HintSize="390,48" sap2010:WorkflowViewState.IdRef="MultipleAssign_Parse">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOp_Key">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[key]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[line.Split("="c)(0).Trim()]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOp_Value">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[value]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[line.Split("="c)(1).Trim().Replace("""", "")]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOp_Dict">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">[configDict(key)]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">[value]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="LogMessage_Err" Level="Error" Message="[&quot;GetEnvironmentVariables Error: &quot; + exception.ToString]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    
+    <!-- Get Credentials if provided -->
+    <If Condition="[Not String.IsNullOrEmpty(credentialAssetName_In)]" DisplayName="Check Credential Asset Provided" sap:VirtualizedContainerService.HintSize="540,150" sap2010:WorkflowViewState.IdRef="If_Cred">
+      <If.Then>
+        <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[credentialAssetName_In]" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[credentialFolderPath_In]" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password_Out]" Username="[username_Out]" />
+      </If.Then>
+    </If>
+    
+    <!-- Assign Output -->
+    <Assign DisplayName="Set Config Output" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="Assign_Output">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[config_Out]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[configDict]</InArgument>
+      </Assign.Value>
+    </Assign>
+    
+    <ui:LogMessage DisplayName="Log Success" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="LogMessage_Success" Level="Info" Message="[&quot;Environment variables loaded successfully. Keys: &quot; + String.Join(&quot;, &quot;, configDict.Keys)]" />
+    
+  </Sequence>
+</Activity>

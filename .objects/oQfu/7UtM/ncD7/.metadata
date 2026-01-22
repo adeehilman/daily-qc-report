@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Edge Nusames Xiaomi",
+  "Type": "Screen",
+  "Id": "ncD7sgfGVk2ogHqUGglJwg",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/ncD7sgfGVk2ogHqUGglJwg",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/7UtMar6nqkyK2e9Oi0oBTA",
+  "Created": "2025-11-25T04:46:21.9455969Z",
+  "Updated": "2025-11-25T04:46:37.0703392Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

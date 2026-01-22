@@ -1,0 +1,14 @@
+﻿{
+  "Name": "RBTYP (BUSI TYPE)",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "wHe3UO1QbUeZc_fkjLYyaA",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/wHe3UO1QbUeZc_fkjLYyaA",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/G0NVND28H06IwLau_OHYOw",
+  "Created": "2025-11-26T07:07:00.1924325Z",
+  "Updated": "2025-11-26T07:07:00.1924325Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

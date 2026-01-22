@@ -1,0 +1,125 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SetCacheSafe" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="cacheKey_In" Type="InArgument(x:String)" />
+    <x:Property Name="cacheValue_In" Type="InArgument(x:String)" />
+    <x:Property Name="cacheFolderPath_In" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:WorkflowViewState.IdRef>SetCacheSafe_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SetCacheSafe" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="cacheFilePath" />
+      <Variable x:TypeArguments="x:String" Default="[Environment.CurrentDirectory + &quot;\Data\Cache&quot;]" Name="defaultCachePath" />
+      <Variable x:TypeArguments="x:String" Name="sanitizedKey" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Start SetCacheSafe" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[SetCacheSafe] Starting to set cache for key: &quot; + cacheKey_In]" />
+    <Assign DisplayName="Sanitize Key" sap2010:WorkflowViewState.IdRef="Assign_Sanitize">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sanitizedKey]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[cacheKey_In.Replace("/", "__").Replace("\", "__").Replace(":", "__").Replace("*", "__").Replace("?", "__").Replace("&lt;", "__").Replace("&gt;", "__").Replace("|", "__")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Sanitized Key" sap2010:WorkflowViewState.IdRef="LogMessage_Sanitized" Level="Info" Message="[&quot;[SetCacheSafe] Sanitized key: &quot; + sanitizedKey]" />
+    <If Condition="[String.IsNullOrEmpty(cacheFolderPath_In)]" DisplayName="Check Cache Folder Path" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[cacheFilePath]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[defaultCachePath + "\" + sanitizedKey + ".txt"]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
+      <If.Else>
+        <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[cacheFilePath]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[cacheFolderPath_In + "\" + sanitizedKey + ".txt"]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Cache Path" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[SetCacheSafe] Cache file path: &quot; + cacheFilePath]" />
+    <If Condition="[Not Directory.Exists(Path.GetDirectoryName(cacheFilePath))]" DisplayName="Check Directory Exists" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <InvokeMethod DisplayName="Create Directory" MethodName="CreateDirectory" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" TargetType="s:Directory" xmlns:s="clr-namespace:System.IO;assembly=System.Private.CoreLib">
+          <InvokeMethod.Parameters>
+            <InArgument x:TypeArguments="x:String">[Path.GetDirectoryName(cacheFilePath)]</InArgument>
+          </InvokeMethod.Parameters>
+        </InvokeMethod>
+      </If.Then>
+    </If>
+    <If Condition="[File.Exists(cacheFilePath)]" DisplayName="Check File Exists" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence DisplayName="Delete Existing Cache" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <ui:LogMessage DisplayName="Log Delete Old Cache" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;[SetCacheSafe] Deleting existing cache file: &quot; + cacheFilePath]" />
+          <InvokeMethod DisplayName="Delete File" MethodName="Delete" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" TargetType="s:File" xmlns:s="clr-namespace:System.IO;assembly=System.Private.CoreLib">
+            <InvokeMethod.Parameters>
+              <InArgument x:TypeArguments="x:String">[cacheFilePath]</InArgument>
+            </InvokeMethod.Parameters>
+          </InvokeMethod>
+        </Sequence>
+      </If.Then>
+    </If>
+    <InvokeMethod DisplayName="Write Cache File" MethodName="WriteAllText" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" TargetType="s:File" xmlns:s="clr-namespace:System.IO;assembly=System.Private.CoreLib">
+      <InvokeMethod.Parameters>
+        <InArgument x:TypeArguments="x:String">[cacheFilePath]</InArgument>
+        <InArgument x:TypeArguments="x:String">[cacheValue_In]</InArgument>
+      </InvokeMethod.Parameters>
+    </InvokeMethod>
+    <ui:LogMessage DisplayName="Log Cache Set Complete" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;[SetCacheSafe] Cache set successfully for key: &quot; + cacheKey_In + &quot; with value: &quot; + cacheValue_In]" />
+  </Sequence>
+</Activity>

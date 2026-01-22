@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="QeMGgLwsX0y2c4Dub-xgDQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="d3a64b05-0e9d-4378-8f59-895b1d44a018" CvElementArea="703, 292, 262, 43" CvType="InputBox" DesignTimeRectangle="721, 295, 226, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" Guid="c9a97ac9-5d93-474e-b816-7ca32e4c5125" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com/login' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f2a1b16aae05740c1088f7b0410f33fb.png" xmlns="">0sJ2fV9ExXk20hgSOTgYBCA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="N6kgM8oQAUmoFxT_gNWkBw" Reference="y4ypWjSc8U6u3AfBQdopog/4OTeaGCHlkCv9EODINfEbQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/approval-document" CVScreenId="5c282b6d-da8a-4c47-a479-d1e2148040fb" CvElementArea="74, 984, 20, 19" CvTextArea="118, 987, 138, 13" CvTextArgument="4500160366 DBD" CvType="CheckBox" DesignTimeRectangle="68, 992, 220, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Failed to fetch' parentid='11' tag='DIV' /&gt;" Guid="0cc66936-7dbd-4d20-80f1-82be4c3c3d2a" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2b8850d08c64bab29d77dfc0778e6f03.png" xmlns="">0285NwAPU0kSJK-CVy2iVUQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ULc8xLm-kkiDTEfTFGr8GA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="48261efd-edfa-4640-ab35-23cfdca1c1a1" CvTextArea="1627, 380, 91, 16" CvTextArgument="Station Report" CvType="Text" DesignTimeRectangle="1629, 379, 88, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Station Report' parentid='popover-body-3' tag='P' type='' class='chakra-text css-itvw0n' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Station Report' /&gt;" Guid="1bfa0e89-2fdb-4d94-9dbe-16f0af074d02" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com/login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="48261efd-edfa-4640-ab35-23cfdca1c1a1" CvTextArea="1627, 380, 91, 16" CvTextArgument="Station Report" CvType="Text" DesignTimeRectangle="1621, 371, 200, 32" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='popover-body-3' tag='BUTTON' type='button' class='chakra-button css-yrsrvn' aaname='Station Report' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Station Report' /&gt;" Guid="5b36eb43-6cc7-4c9d-9135-db33e64d0cfe" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="250734011ec7d9d4a288c852f1209938.png" xmlns="">0f-lef-I2X0mDdWAU_fhVwA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

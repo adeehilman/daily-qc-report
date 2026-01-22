@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0AAR5OcSf0GwZgpeZQKqXA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com" DesignTimeRectangle="1371, 171, 300, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='chakra-button css-x640d1' aaname='Search menuCtrl +K' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Search menu&amp;#xA;&amp;#xA;Ctrl&amp;#xA;+&amp;#xA;K' /&gt;" Guid="c62b7a7f-f62f-47bb-8562-e2f26b1ff691" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="c70210b2-d0ab-41b0-88d7-a4cb4334acae" CvElementArea="1369, 168, 301, 45" CvType="InputBox" DesignTimeRectangle="1412, 179, 91, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Search menu' tag='P' type='' class='chakra-text css-11cuipc' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Search menu' /&gt;" Guid="d6e274a3-6a2e-4230-beb8-6cc293d318c1" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="502f4a2b4219836b9780a3f7084dfed8.png" xmlns="">0166HO7iuS028hFl36NXgjA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

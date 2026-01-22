@@ -1,0 +1,16 @@
+﻿{
+  "Name": "MainWindow(1)(1)",
+  "Type": "Screen",
+  "Id": "WdKHkLDLvUCQ_kXkuJtCgg",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/WdKHkLDLvUCQ_kXkuJtCgg",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/NFae7BkgZEWGGOc_CfqU1w",
+  "Created": "2025-11-24T08:33:05.1416606Z",
+  "Updated": "2025-11-24T09:07:06.9859315Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

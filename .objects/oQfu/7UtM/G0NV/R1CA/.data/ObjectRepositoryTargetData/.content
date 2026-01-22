@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="NOrchm9RBUm6C03qpCkFnA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/approval-document" CVScreenId="43dd91a7-89e7-433b-8a35-be4a988a97e9" CvElementArea="704, 321, 528, 41" CvType="InputBox" DesignTimeRectangle="705, 324, 489, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' parentid='chakra-modal--body-1668' tag='DIV' class=' css-1d8n9bt' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="bbbf5060-c7d5-43d7-bdcf-416d16365842" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="43dd91a7-89e7-433b-8a35-be4a988a97e9" CvTextArea="703, 296, 100, 14" CvTextArgument="MiDoc Num *" CvType="Text" DesignTimeRectangle="704, 291, 516, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='chakra-modal--body-1668' tag='LABEL' type='' class='chakra-form__label css-10m1y3x' aaname='MiDoc Num' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='MiDoc Num*' /&gt;" Guid="682f5597-0d7f-4915-9bfb-ae77c28921c7" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="98fda1ce72c53cf8aecfece6a7c85671.png" xmlns="">0suw30mULQ0SVQmsDWXok0A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

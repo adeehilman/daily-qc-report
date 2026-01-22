@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dWVkb7YY_UeYEFN2CxZ6ig" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" DesignTimeRectangle="68, 992, 220, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='9' tag='DIV' type='' class='chakra-alert__desc css-zycdy9' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="939e8f39-5851-46c6-93f4-52a5202414fb" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a8bd3494afe99e0812e3cfd029c67573.png" xmlns="">0Y-ra6SuNQECNLGGMzA4ZqA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

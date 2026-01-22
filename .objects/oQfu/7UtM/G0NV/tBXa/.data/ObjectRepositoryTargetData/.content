@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="S8DhXKlB60GWnmWV2FCv9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/approval-document" CVScreenId="ac69fddb-806c-43f0-b28e-48a2a27a8b19" CvElementArea="1217, 188, 22, 22" CvTextArea="704, 199, 297, 17" CvTextArgument="New XM106 Approval Document" CvType="CloseButton" DesignTimeRectangle="680, 176, 576, 62" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='chakra-modal--header-1668' tag='HEADER' /&gt;" Guid="01e2fc23-963c-4041-ab90-0d32c9d08e84" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8a6ed550a3f59d9cb048c27115037a0b.png" xmlns="">0rNLXNP0VA0K-iXKEV6MGog</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

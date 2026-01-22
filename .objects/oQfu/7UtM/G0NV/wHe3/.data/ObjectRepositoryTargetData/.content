@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="IFmvS68C30SuUuWN2ONfiA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/approval-document" CVScreenId="fec2721d-1f22-4e0d-8354-904e1d8a0f9e" CvElementArea="704, 364, 528, 41" CvType="InputBox" DesignTimeRectangle="704, 366, 528, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class=' css-1pahdxg-control' parentid='chakra-modal--body-1669' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="c7d1680f-ca6f-49e3-bf45-c5af1f1d0a67" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="fec2721d-1f22-4e0d-8354-904e1d8a0f9e" CvTextArea="703, 339, 137, 17" CvTextArgument="RBTYP (BUSI TYPE)" CvType="Text" DesignTimeRectangle="704, 334, 516, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='RBTYP (BUSI TYPE)' parentid='chakra-modal--body-1669' tag='LABEL' type='' class='chakra-form__label css-10m1y3x' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='RBTYP (BUSI TYPE)' /&gt;" Guid="effc04b7-ce93-4a38-9ba6-11923315e384" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="12dabb350ebce90f744b5e7d5c9d62cc.png" xmlns="">09cown2KyA0qirHgZ2p_m8A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RDlqr33bVUGlBSLEHaAiuQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.xiaomi.satnusa.com/login" CVScreenId="2a333764-36c3-4c9d-af42-f81f49df54e6" CvElementArea="726, 600, 485, 55" CvType="InputBox" DesignTimeRectangle="728, 631, 482, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='' class='chakra-input css-n9lnwn' placeholder='Username' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="95089f4e-2576-4e1f-a0a2-60775b824ce2" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.xiaomi.satnusa.com:30501/login?redirect=/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3446a184d1077bed5a9d513d7ae1b247.png" xmlns="">05qVD2jD4fU-1c8MKeIXnCw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,3 @@
+cd /d "D:\RPA\Xiaomi\Compile Packing List\dist\utilities\PackingListCombineApp"
+PackingListCombineApp.exe
+exit

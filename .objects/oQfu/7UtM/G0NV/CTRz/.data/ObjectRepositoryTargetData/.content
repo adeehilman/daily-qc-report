@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ZXso8eGyrEOmazQ5z9JmOg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/approval-document" CVScreenId="8e3df5bf-c2a9-4578-855e-47b37eed2790" CvElementArea="702, 276, 260, 43" CvType="InputBox" DesignTimeRectangle="704, 278, 256, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='react-datepicker__input-container' parentid='chakra-modal--body-1669' tag='DIV' type='' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="c8dba5ca-6afa-403e-8026-2922c736df19" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nusames Xiaomi' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="8e3df5bf-c2a9-4578-855e-47b37eed2790" CvTextArea="704, 251, 87, 14" CvTextArgument="Date From *" CvType="Text" DesignTimeRectangle="704, 246, 244, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='chakra-modal--body-1669' tag='LABEL' type='' class='chakra-form__label css-10m1y3x' aaname='Date From' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Date From*' /&gt;" Guid="769c926f-a8fc-48ab-a9b4-79a24ab2e61b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="dd5e84734e1178000b54e69497fa7e15.png" xmlns="">0N09homV1o0udW_GsTBCA5Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

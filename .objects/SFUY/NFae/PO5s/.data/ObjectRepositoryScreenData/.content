@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="FOma-2iUXkCHka7nofgtQg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 1920, 1032" FilePath="D:\RPA\Xiaomi\Compile Packing List\dist\utilities\PackingListCombineApp\packinglistcombination.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHYSURBVDhPY6AqCBQSSp8vLzcfHy6VkGiCKkcFtSLCK125uWI7uLk6Ojg5Otp5uDva+HjbO7g4OzqAbBBu5+ZqT+NgL93Jx3sVqg0CyoSFFzlxc0VBuQzXBfjvv+Jkf/eUm/PNPyamf1BhOEjmYC/azM93EcxJExWZZsrF5QPmAEEMP1+Sh6BAIpSLE4RycqStEhA4xVDIzFQCFQMDH1GR5P8sTP8f8vO8qBMUaGFiZGSGSmEAP0bGQIYKFuYKKB8OXPn5/c7xcF/+z8Dw/z8by38pAQErqBQKCAchdANkuLnVQDRI8yt2tm/Z/HwtR3m5TzIzMrLo8vKiGITVgP+MDP8TRYSLbvHy3AN55T8TyCwIMGVjM4UywQCrASDAxcTE/YmD/VsgF1cgyIDLfLyPQOJYDShnZi6H8lHAew7291Amw38mxv9rRYSPohsQwMgYzLBfgO9hubDwKqgYHLxnRxgAAiBDkA3oZ2bqP8/H+xTMucjP96pSWHgtmAME4hwcsv+Ymf8DAw4lCu3Z2exB9AwmhhmXBfjfgAVh4Bof77tGYeHtiiwsisqsLMrKrKzKyixQGopBcrmiIgtv8PF9gGpDBQsFBdeuF+Rfjw/PFxKCu5QKgIEBAMvJjMI/MP7vAAAAAElFTkSuQmCC" Selector="&lt;wnd app='packinglistcombination.exe' cls='#32770' title='Open' /&gt;" Version="V2">
+      <imageRef attrName="InformativeScreenshot" originalValue="1c2adcf577ed6e1f1764321fbecab17e.png" xmlns="">0qK0RE8rzxEGPnuu4LYRDVg</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

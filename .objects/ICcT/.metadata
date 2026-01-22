@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge nusames.xiaomi.satnusa.com30501loginredirect=",
+  "Type": "App",
+  "Id": "ICcTJoKMykOoSnJaNH8ryg",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/ICcTJoKMykOoSnJaNH8ryg",
+  "Created": "2025-11-25T04:55:32.2409527Z",
+  "Updated": "2025-11-25T04:55:32.2409527Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

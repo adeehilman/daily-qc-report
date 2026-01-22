@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge nusames-asusnb.dev.xiaomi.satnusa.comlog",
+  "Type": "Screen",
+  "Id": "goZ4Owte_0eY7CvH-KTHgA",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/goZ4Owte_0eY7CvH-KTHgA",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/AdYJzNv51EeZaC0L1iCbJQ",
+  "Created": "2025-12-17T03:54:48.7842392Z",
+  "Updated": "2025-12-17T03:54:48.7842392Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

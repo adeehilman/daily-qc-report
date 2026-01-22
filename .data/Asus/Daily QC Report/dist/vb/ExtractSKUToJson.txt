@@ -1,0 +1,36 @@
+Sub ExtractSKUToJson(outputPath As String)
+    Dim ws As Worksheet
+    Set ws = ActiveSheet
+    
+    Dim lastRow As Long
+    lastRow = ws.Cells(ws.Rows.Count, "C").End(xlUp).Row
+    
+    Dim curVal As String
+    Dim startRow As Long
+    Dim json As String
+    
+    json = "["
+    startRow = 1
+    curVal = ws.Cells(1, "C").Value
+    
+    Dim i As Long
+    For i = 2 To lastRow + 1
+        If ws.Cells(i, "C").Value <> curVal Then
+            json = json & _
+            "{""product_key"":""" & curVal & """," & _
+            """column_rows_start"":""" & startRow & """," & _
+            """column_rows_end"":""" & i - 1 & """},"
+            
+            curVal = ws.Cells(i, "C").Value
+            startRow = i
+        End If
+    Next i
+    
+    json = Left(json, Len(json) - 1) & "]"
+    
+    Dim fso As Object, file As Object
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set file = fso.CreateTextFile(outputPath, True)
+    file.Write json
+    file.Close
+End Sub

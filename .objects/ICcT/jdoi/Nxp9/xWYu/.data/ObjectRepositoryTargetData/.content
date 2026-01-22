@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="XyhZ4jti_kqQ2H0QQmgl6g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/login" CVScreenId="b942ea70-62a0-4acb-ac01-589343016162" CvElementArea="727, 600, 483, 55" CvType="InputBox" DesignTimeRectangle="728, 603, 482, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='' class='chakra-input css-n9lnwn' placeholder='Username' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="8b26e05b-7d90-448d-b8c5-f6f7d8962d8a" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-xiaomi.dev.xiaomi.satnusa.com/login?redirect=/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="b942ea70-62a0-4acb-ac01-589343016162" CvTextArea="726, 568, 106, 18" CvTextArgument="Username *" CvType="Text" DesignTimeRectangle="728, 563, 467, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='chakra-form__label css-10m1y3x' aaname='Username' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username*' /&gt;" Guid="fdbbd6b4-8069-4a7f-99ab-6f8023994084" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7064c139ab17270e876e1a82493bc660.png" xmlns="">0L6PB92FcRUm1A9ByQi4GeQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

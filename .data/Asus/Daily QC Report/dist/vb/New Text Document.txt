@@ -1,0 +1,38 @@
+Sub ApplyOperation(ByVal rngAddress As String, ByVal sheetName As String, ByVal operation As String)
+
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.Sheets(sheetName)
+
+    Dim rng As Range
+    Set rng = ws.Range(rngAddress)
+
+    Dim cell As Range
+    For Each cell In rng.Cells
+        If IsNumeric(cell.Value) And Not IsEmpty(cell.Value) Then
+
+            Select Case LCase(operation)
+                Case "add"
+                    cell.Value = cell.Value + 1
+                
+                Case "subtract"
+                    cell.Value = cell.Value - 1
+                
+                Case "multiply"
+                    cell.Value = cell.Value * 2
+                
+                Case "divide"
+                    If cell.Value <> 0 Then
+                        cell.Value = cell.Value / 2
+                    End If
+                
+                Case "clear"
+                    cell.Value = ""
+                
+                Case Else
+                    ' Unknown operator → do nothing
+            End Select
+
+        End If
+    Next cell
+
+End Sub

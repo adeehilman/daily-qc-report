@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Address DRPAXiaomi…",
+  "Type": "Element",
+  "Id": "ijPnJQtZa0WemfbxNKOujg",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/ijPnJQtZa0WemfbxNKOujg",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/PO5sReXQHku-1tsZgnpI3A",
+  "Created": "2025-11-24T08:45:54.7431654Z",
+  "Updated": "2025-11-24T08:45:54.7431654Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

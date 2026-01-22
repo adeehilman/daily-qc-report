@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="md2l3bQAuESDmU91UDpB0w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.asusnb.satnusa.com" CVScreenId="ac79528c-8da4-494e-8cc4-59e857b7f745" CvElementArea="702, 372, 264, 43" CvType="InputBox" DesignTimeRectangle="704, 374, 260, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class=' css-xcnfi-control' parentid='chakra-modal--body-13' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a16fe9cf-3a99-4b5b-bde8-2d3730caa4a3" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="ac79528c-8da4-494e-8cc4-59e857b7f745" CvTextArea="703, 346, 64, 15" CvTextArgument="Station *" CvType="Text" DesignTimeRectangle="704, 342, 248, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Station' tag='LABEL' type='' class='chakra-form__label css-2gx1h6' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Station*' /&gt;" Guid="1b62bff9-55ce-4756-9f17-ce41426ba9a2" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="076a4c6e2f8c9a742aea9d263a3d8e56.png" xmlns="">0IMOAo0Xf-Uup-WtmO_1sVg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SelectItem</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

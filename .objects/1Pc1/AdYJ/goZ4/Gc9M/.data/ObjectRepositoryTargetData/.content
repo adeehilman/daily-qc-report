@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="4L1QKV20J0GdUo-lHUAozA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="e139dd8d-2638-4558-a69b-a6ae9493e0ee" CvElementArea="1217, 188, 22, 22" CvTextArea="703, 199, 134, 22" CvTextArgument="Station Report" CvType="CloseButton" DesignTimeRectangle="680, 176, 576, 62" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='chakra-modal--header-13' tag='HEADER' /&gt;" Guid="003545fc-6bc1-45e2-a04e-a8c7bd4eb5e8" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c487b4cdcc1530592cb44944813fb4ba.png" xmlns="">00UvEWNID0kqNSAiXeKjCFA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

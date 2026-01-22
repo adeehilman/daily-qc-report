@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="1GSmaKcboUyUUOVKfM7o8w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="e621d80e-dab6-4ecc-b281-fb6c38fd5118" CvTextArea="1785, 139, 42, 14" CvTextArgument="Menu" CvType="Text" DesignTimeRectangle="1745, 126, 98, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='popover-trigger-3' tag='BUTTON' /&gt;" Guid="2b7c5f81-7186-4d88-9fa0-e09d5b39ce66" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com/login' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9be8a74063df78085b353abff8f9ff15.png" xmlns="">0vCI81Ju5YUyjwgsagpw9EQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

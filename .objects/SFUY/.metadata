@@ -1,0 +1,12 @@
+﻿{
+  "Name": "MainWindow",
+  "Type": "App",
+  "Id": "SFUYeX2xnUe4jION3PDS5A",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/SFUYeX2xnUe4jION3PDS5A",
+  "Created": "2025-11-24T05:25:14.7798743Z",
+  "Updated": "2025-11-24T05:25:14.7798743Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.20.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

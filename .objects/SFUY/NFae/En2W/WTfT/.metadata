@@ -1,0 +1,14 @@
+﻿{
+  "Name": "push button btn_process",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "WTfT_nC7hEuLLHB3R4d61w",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/WTfT_nC7hEuLLHB3R4d61w",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/En2WXrOf10GpmF6E5e6UAg",
+  "Created": "2025-11-24T09:07:40.9662939Z",
+  "Updated": "2025-11-24T09:07:40.9662939Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

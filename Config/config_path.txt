@@ -1,0 +1,5 @@
+﻿fileConfig="D:\RPA\Xiaomi\Compile Packing List\Input\Template\config.xlsx"
+fileOutput="D:\RPA\Xiaomi\Compile Packing List\Output"
+fileInput="D:\RPA\Xiaomi\Compile Packing List\Input"
+fileHistory="D:\RPA\Xiaomi\Compile Packing List\History"
+projectName="History_Compile_Packing"

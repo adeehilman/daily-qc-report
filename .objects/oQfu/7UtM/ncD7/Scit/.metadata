@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Login",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "ScitSg09aEiBqxmJAKyUtA",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/ScitSg09aEiBqxmJAKyUtA",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/ncD7sgfGVk2ogHqUGglJwg",
+  "Created": "2025-11-25T04:55:04.1427879Z",
+  "Updated": "2025-11-25T04:55:04.1427879Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

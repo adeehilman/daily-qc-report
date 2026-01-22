@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="8aHmInZXzEKtRBSnvekr2Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="ae0a2603-865b-43a8-9f76-49f39e04aecd" CvElementArea="21, 954, 300, 76" CvTextArea="66, 973, 77, 18" CvTextArgument="TypeError" CvType="Button" DesignTimeRectangle="68, 968, 212, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='TypeError' parentid='8' tag='DIV' /&gt;" Guid="e525ade7-7baa-4de0-9c5e-dbc936b97c20" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="531d1f1e5d77468f00585cc8756cf84e.png" xmlns="">0csBYnEeSykO0UqZ_V8m3Og</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

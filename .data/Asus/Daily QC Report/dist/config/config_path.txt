@@ -1,0 +1,17 @@
+URL_NUSAMES_PROD="http://nusames.asusnb.satnusa.com:30501/"
+URL_NUSAMES_DEV="http://nusames.asusnb.satnusa.com:30501/"
+
+fileConfig="D:\RPA\Xiaomi\Daily QC Report\Input\Template\config.xlsx"
+fileOutput="D:\RPA\Xiaomi\Daily QC Report\output"
+fileInput="D:\RPA\Xiaomi\Daily QC Report\input"
+fileHistory="D:\RPA\Xiaomi\Daily QC Report\history"
+projectName="History_Daily_QC_Report"
+
+USERNAME_NUSAMES_DEV="dit"
+PASSWORD_NUSAMES_DEV="Passw0rd"
+
+NUSAMES_EXPORT_LOCATION_DOWNLOAD="D:\RPA\Xiaomi\Daily QC Report\dist\NUSAMES_EXPORT"
+
+formulaPath="D:\RPA\Xiaomi\Daily QC Report\dist\utilities\formulaExcel.txt"
+
+NEWSHEET_PACKINGLIST_NAME="Sheet1"

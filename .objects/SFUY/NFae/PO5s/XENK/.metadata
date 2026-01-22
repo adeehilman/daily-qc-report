@@ -1,0 +1,14 @@
+﻿{
+  "Name": "DirectUIHWND",
+  "Type": "Element",
+  "TaxonomyType": "Listbox",
+  "Id": "XENKCPmfLEammLbbQRHXTQ",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/XENKCPmfLEammLbbQRHXTQ",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/PO5sReXQHku-1tsZgnpI3A",
+  "Created": "2025-11-24T09:04:13.6576838Z",
+  "Updated": "2025-11-24T09:04:13.6576838Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

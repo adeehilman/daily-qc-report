@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="SbRwrWxuQUamjiBazyE_ww" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="625, 27, 550, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl automationid='btn_process' /&gt;" Guid="9c7d79b7-b0c5-4007-ab93-8ad2391dfc22" ScopeSelectorArgument="&lt;wnd app='packinglistcombination.exe' cls='HwndWrapper*' title='MainWindow' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="886c39a7768c2340b47108e4bcc0eb71.png" xmlns="">0mnl02OHcoUeIL-uXxlN7hw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
