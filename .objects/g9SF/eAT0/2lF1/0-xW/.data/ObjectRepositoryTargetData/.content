@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="jIFkcUTcLk2nayWP7V19eQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.asusnb.satnusa.com/login" CVScreenId="c001915d-2971-4c25-9fcc-3b3c81eea095" CvElementArea="304, 489, 360, 42" CvType="InputBox" DesignTimeRectangle="303, 490, 345, 40" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='field-2' tag='INPUT' type='password' class='chakra-input css-31kxag' placeholder='Password' aaname='Password*' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' fuzzylevel:aaname='0.0' /&gt;" Guid="93b9cddd-48cf-466e-b6b3-67a0cf4b3c91" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501/login?redirect=/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="c001915d-2971-4c25-9fcc-3b3c81eea095" CvTextArea="302, 462, 80, 15" CvTextArgument="Password *" CvType="Text" DesignTimeRectangle="303, 458, 374, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='chakra-form__label css-2gx1h6' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password*' /&gt;" Guid="404c94ae-48aa-4043-8959-61a0d4c4e920" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="94d368f6ad37392dbfb7934d8be1b6a1.png" xmlns="">02MDKOW-rCUGhHeODDRBmvw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

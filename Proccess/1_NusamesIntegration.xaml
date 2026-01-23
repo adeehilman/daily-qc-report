@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="NusamesIntegration" this:NusamesIntegration.env_In="dev" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="NusamesIntegration" this:NusamesIntegration.env_In="dev" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="MiDocsNumber_In" Type="InArgument(x:String)" />
     <x:Property Name="env_In" Type="InArgument(x:String)" />
@@ -50,6 +50,8 @@
       <x:String>System.Numerics</x:String>
       <x:String>System.Globalization</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,9 +119,13 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="NusamesIntegration" sap:VirtualizedContainerService.HintSize="706,2293" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="NusamesIntegration" sap:VirtualizedContainerService.HintSize="706,2629" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="urlNusames" />
       <Variable x:TypeArguments="x:String" Name="userName" />
@@ -134,13 +140,17 @@
       <Variable x:TypeArguments="x:String" Name="locationExportPath" />
       <Variable x:TypeArguments="x:String" Name="DateTo" />
       <Variable x:TypeArguments="x:String" Name="DateForm" />
+      <Variable x:TypeArguments="x:String" Name="folderInput" />
+      <Variable x:TypeArguments="x:String" Name="fileResultOBAOBEReport" />
+      <Variable x:TypeArguments="x:String" Name="outputFailed" />
+      <Variable x:TypeArguments="scg:IList(x:String)" Name="listFailedDownload" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence - Get Environtment" sap:VirtualizedContainerService.HintSize="570,738" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Sequence - Get Environtment" sap:VirtualizedContainerService.HintSize="630,738" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="configTxt" />
       </Sequence.Variables>
@@ -193,7 +203,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="480,217" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="480,197" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -214,9 +224,9 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <ui:MultipleAssign sap2010:Annotation.AnnotationText="urlNusames temporary in devmode" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="450,73" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="urlNusames temporary in devmode" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="450,53" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
               <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                     <ui:AssignOperation.To>
                       <OutArgument x:TypeArguments="x:String">[urlNusames]</OutArgument>
@@ -265,6 +275,22 @@
                       <InArgument x:TypeArguments="x:String">[DateTime.Parse(DateForm).AddMonths(1).ToShortDateString()]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[folderInput]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[config("fileInput")]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[fileResultOBAOBEReport]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[System.IO.Directory.GetFiles(folderInput, "*" + "OBA-OBE" + "*.xlsx")(0)]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
               <sap:WorkflowViewStateService.ViewState>
@@ -276,7 +302,7 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:Annotation.AnnotationText="[DEV} Environtment" DisplayName="Else" sap:VirtualizedContainerService.HintSize="480,197" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="[DEV} Environtment" DisplayName="Else" sap:VirtualizedContainerService.HintSize="480,217" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -348,6 +374,22 @@
                       <InArgument x:TypeArguments="x:String">[DateTime.Today.AddHours(7).ToString("dd-MM-yyyy HH:mm")]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[folderInput]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[config("fileInput")]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_26">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[fileResultOBAOBEReport]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[System.IO.Directory.GetFiles(folderInput, "*" + "OBE-OBA" + "*.xlsx")(0)]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
@@ -355,7 +397,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Sequence - Nusames" sap:VirtualizedContainerService.HintSize="570,1531" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Sequence - Nusames" sap:VirtualizedContainerService.HintSize="630,1867" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="asdasdas" />
       </Sequence.Variables>
@@ -366,15 +408,15 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="540,48" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="msedge">
+      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="600,48" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="msedge">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:KillProcess>
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="540,48" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;test&quot;]" />
-      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Initiate a Type Into action to enter the username and password fields on the Nusames login page." AttachMode="ByInstance" DisplayName="Edge nusames-xiaomi.dev.xiaomi.satnusa.comlog" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="540,306" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="10dc34a5-3f54-4f9c-bc17-d8b3280840d8" Version="V2">
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="600,48" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;test&quot;]" />
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Initiate a Type Into action to enter the username and password fields on the Nusames login page." AttachMode="ByInstance" CloseMode="Always" DisplayName="Edge nusames-xiaomi.dev.xiaomi.satnusa.comlog" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="600,306" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="10dc34a5-3f54-4f9c-bc17-d8b3280840d8" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -387,27 +429,17 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBefore="1" DisplayName="Type Into 'Username*'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="10dc34a5-3f54-4f9c-bc17-d8b3280840d8" Text="[userNameCred]" Version="V5">
-                <uix:NTypeInto.Target>
-                  <uix:TargetAnchorable BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/login" CVScreenId="b942ea70-62a0-4acb-ac01-589343016162" ContentHash="XyhZ4jti_kqQ2H0QQmgl6g" CvElementArea="727, 600, 483, 55" CvType="InputBox" DesignTimeRectangle="728, 603, 482, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='' class='chakra-input css-n9lnwn' placeholder='Username' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="8b26e05b-7d90-448d-b8c5-f6f7d8962d8a" InformativeScreenshot="7064c139ab17270e876e1a82493bc660.png" IsResponsive="True" Reference="y4ypWjSc8U6u3AfBQdopog/xWYuQkBGpkidxBbAoAsN0g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-xiaomi.dev.xiaomi.satnusa.com/login?redirect=/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+              <uix:NSetText DisplayName="Set Text 'Username*'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="NSetText_1" ScopeIdentifier="10dc34a5-3f54-4f9c-bc17-d8b3280840d8" Text="[userNameCred]" Version="V5">
+                <uix:NSetText.Target>
+                  <uix:TargetAnchorable BrowserURL="nusames.asusnb.satnusa.com/login" CVScreenId="1aa5768a-aea6-4c44-b5d3-9690e1c3926f" ContentHash="eEEj28h44EyThN3FLZ1wnQ" CvElementArea="302, 400, 388, 44" CvType="InputBox" DesignTimeRectangle="303, 402, 386, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='' class='chakra-input css-1c6j008' placeholder='Username' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b5809c19-1dc4-4d99-90a6-8281b1b4056d" InformativeScreenshot="1a305e39dc9caced5c8095ea9bb9a9c9.png" IsResponsive="True" Reference="y4ypWjSc8U6u3AfBQdopog/w6ZcXLk_yECXfA7eX3JalA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501/login?redirect=/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="b942ea70-62a0-4acb-ac01-589343016162" CvTextArea="726, 568, 106, 18" CvTextArgument="Username *" CvType="Text" DesignTimeRectangle="728, 563, 467, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='chakra-form__label css-10m1y3x' aaname='Username' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username*' /&gt;" Guid="fdbbd6b4-8069-4a7f-99ab-6f8023994084" SearchSteps="FuzzySelector, CV" />
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="1aa5768a-aea6-4c44-b5d3-9690e1c3926f" CvTextArea="302, 375, 85, 14" CvTextArgument="Username *" CvType="Text" DesignTimeRectangle="303, 370, 374, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='chakra-form__label css-2gx1h6' aaname='Username' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username*' /&gt;" Guid="b250d54d-edf9-44d4-95d5-1763cd09ee3a" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
-                </uix:NTypeInto.Target>
-                <uix:NTypeInto.VerifyOptions>
-                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                    <uix:VerifyExecutionTypeIntoOptions.Retry>
-                      <InArgument x:TypeArguments="x:Boolean" />
-                    </uix:VerifyExecutionTypeIntoOptions.Retry>
-                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                      <InArgument x:TypeArguments="x:Double" />
-                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                  </uix:VerifyExecutionTypeIntoOptions>
-                </uix:NTypeInto.VerifyOptions>
-              </uix:NTypeInto>
+                </uix:NSetText.Target>
+              </uix:NSetText>
               <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBefore="1" DisplayName="Type Into 'Password*'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="10dc34a5-3f54-4f9c-bc17-d8b3280840d8" SecureText="[passwordCred]" Version="V5">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="nusames-xiaomi.dev.xiaomi.satnusa.com/login" CVScreenId="fcc7c574-2bea-47c5-8261-d0f1701807fa" ContentHash="4x-ETTzryEm93ZBtcHe1Pw" CvElementArea="729, 711, 441, 53" CvType="InputBox" DesignTimeRectangle="728, 713, 431, 50" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='field-201' tag='INPUT' type='password' class='chakra-input css-1xhzxn1' placeholder='Password' aaname='Password*' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' fuzzylevel:aaname='0.0' /&gt;" Guid="3b09d096-907b-41f3-a7e3-ab2a3442d693" InformativeScreenshot="362ddd9d0950c4d8658c582fade0a7a5.png" Reference="y4ypWjSc8U6u3AfBQdopog/IRmSxHAcQEe10YeWH6nVow" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-xiaomi.dev.xiaomi.satnusa.com/login?redirect=/' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
@@ -445,7 +477,7 @@
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAODSURBVFhHpZfJaxRBFIdbD2pccMEtGEky0zF6iH+DIBg3YvCkB/EmcRu3o4eAiOhBwZsiLiiIipBRQRQXFA/Rg6KIohd3RRERcR3379dTlanpqZ7p0Qcf6Xn9Xv3eq+6uqgRtuVNBmMuL0bASrsMn+AEvYB/MzKzsi+JqmWJmrDitvx2wF56DxtKYN2AVjAFiThUToAmOwjf44+EBdLWsyQ/KVimCmCC7KSp0PtwH31gFOAZTIUpS5xL3Bbu8gsWNPYh4iuBe0LYkaqYbNHO+MVyOwxgl9MBX46zFS+he2lteRHZdPrjZEIkvgjTiQrO9WknXHGcaJLAo3BwJRuIdzArXXeaeLyeJfiW+iznTIKGucEM+aF8TiS8EvWy+2Gp8UHLa6Y9TnIlcfgE8M756KaiApDc/DW/gdcxXD/9dQBK/QJ/hCTgLb8EXl7oAfbu34LPjS0Kxu6EpXJsfzN8hMAtuQ0VsmgJ+gla0RtgC1eIlvh2GQ/SJhrniCgp6X+IN1CxA4nvALJ35BtgKvpzvUCZuTb9hItwDN6dqAbbzSNwZyBahbm1sReeuyQcT4C64GokF6CUqE7em36AitoG6TuxcpoVKfpgLH8HV8RYgce2AFeLW5AcJqggxQr64hSXx6dAPro6oKEDi+2EsmGH8pr0AhhqMt2SOeDskLfdlBaQWr2WO+DS4CnFhy0ABVnwcBNm1fWao+i2zvkz8CviELVEB+jYPgLfzrDkxZVlUIMhAkjnibVBLXEQF7IDxYIYpmY5M8sMU6AV15S0iU5r2EC6DTzBOQS/SMC7MMCULc2fsgJPhJCjhEmQhyLANW3M61z3FxIWSKJghyi3MRYdKMQm0obhJFyADAWu923mruefG1qKyAGfhkLgOj78hnighCdrYFjgP8bhalBegjnAKrdtJ4hZbRDOcM756KRXgfLvVOo+j0/SRmK8eigU0bxzYMtN0bnkMWt/nwCPjq5dC0MrBkot/Ee90/qtSEfL5Yqvx3g6grVLTmUb8CdD5gDhE151QbxHXlDgSDjnOajyFeRAJW7O/QY9EBfpy43yBFUrStnrQOKuho7eO4GXi1qwf0j6OwzDKJunN12bkO3TqsdwBBi5Oe5LpnvmaZoMOob5Hqs7VsM6YTmLxUSyDi6BjtE4vD2EXtLeZz7SWKcbEakPaCRpDY2lMLdPLQVpBU09f8BfAPsrLzUX0kgAAAABJRU5ErkJggg==" InformativeScreenshot="c52d4c95364dbb3771572f7466f6b06e.jpg" Selector="&lt;html app='msedge.exe' title='nusames.dev.xiaomi.satnusa.com/login?redirect=/' /&gt;" Url="[urlNusames + &quot;/login?redirect=/&quot;]" Version="V2" />
+          <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" ContentHash="D_iPEDieE0aKd6BmKj3Qvg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAODSURBVFhHpZfJaxRBFIdbD2pccMEtGEky0zF6iH+DIBg3YvCkB/EmcRu3o4eAiOhBwZsiLiiIipBRQRQXFA/Rg6KIohd3RRERcR3379dTlanpqZ7p0Qcf6Xn9Xv3eq+6uqgRtuVNBmMuL0bASrsMn+AEvYB/MzKzsi+JqmWJmrDitvx2wF56DxtKYN2AVjAFiThUToAmOwjf44+EBdLWsyQ/KVimCmCC7KSp0PtwH31gFOAZTIUpS5xL3Bbu8gsWNPYh4iuBe0LYkaqYbNHO+MVyOwxgl9MBX46zFS+he2lteRHZdPrjZEIkvgjTiQrO9WknXHGcaJLAo3BwJRuIdzArXXeaeLyeJfiW+iznTIKGucEM+aF8TiS8EvWy+2Gp8UHLa6Y9TnIlcfgE8M756KaiApDc/DW/gdcxXD/9dQBK/QJ/hCTgLb8EXl7oAfbu34LPjS0Kxu6EpXJsfzN8hMAtuQ0VsmgJ+gla0RtgC1eIlvh2GQ/SJhrniCgp6X+IN1CxA4nvALJ35BtgKvpzvUCZuTb9hItwDN6dqAbbzSNwZyBahbm1sReeuyQcT4C64GokF6CUqE7em36AitoG6TuxcpoVKfpgLH8HV8RYgce2AFeLW5AcJqggxQr64hSXx6dAPro6oKEDi+2EsmGH8pr0AhhqMt2SOeDskLfdlBaQWr2WO+DS4CnFhy0ABVnwcBNm1fWao+i2zvkz8CviELVEB+jYPgLfzrDkxZVlUIMhAkjnibVBLXEQF7IDxYIYpmY5M8sMU6AV15S0iU5r2EC6DTzBOQS/SMC7MMCULc2fsgJPhJCjhEmQhyLANW3M61z3FxIWSKJghyi3MRYdKMQm0obhJFyADAWu923mruefG1qKyAGfhkLgOj78hnighCdrYFjgP8bhalBegjnAKrdtJ4hZbRDOcM756KRXgfLvVOo+j0/SRmK8eigU0bxzYMtN0bnkMWt/nwCPjq5dC0MrBkot/Ee90/qtSEfL5Yqvx3g6grVLTmUb8CdD5gDhE151QbxHXlDgSDjnOajyFeRAJW7O/QY9EBfpy43yBFUrStnrQOKuho7eO4GXi1qwf0j6OwzDKJunN12bkO3TqsdwBBi5Oe5LpnvmaZoMOob5Hqs7VsM6YTmLxUSyDi6BjtE4vD2EXtLeZz7SWKcbEakPaCRpDY2lMLdPLQVpBU09f8BfAPsrLzUX0kgAAAABJRU5ErkJggg==" InformativeScreenshot="c52d4c95364dbb3771572f7466f6b06e.jpg" Reference="y4ypWjSc8U6u3AfBQdopog/2lF1YGvGiUSg2CeWLTCEmA" Selector="&lt;html app='msedge.exe' title='nusames.dev.xiaomi.satnusa.com/login?redirect=/' /&gt;" Url="[urlNusames + &quot;/login?redirect=/&quot;]" Version="V2" />
         </uix:NApplicationCard.TargetApp>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -455,19 +487,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge nusames-asusnb.dev.xiaomi.satnusa.comlog" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="540,1032" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" ScopeGuid="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge nusames-asusnb.dev.xiaomi.satnusa.comlog" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="600,1368" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,960" sap2010:WorkflowViewState.IdRef="Sequence_33">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="600,1296" sap2010:WorkflowViewState.IdRef="Sequence_33">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Menu'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Menu'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,48" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="e621d80e-dab6-4ecc-b281-fb6c38fd5118" ContentHash="1GSmaKcboUyUUOVKfM7o8w" CvTextArea="1785, 139, 42, 14" CvTextArgument="Menu" CvType="Text" DesignTimeRectangle="1745, 126, 98, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='popover-trigger-3' tag='BUTTON' /&gt;" Guid="2b7c5f81-7186-4d88-9fa0-e09d5b39ce66" InformativeScreenshot="9be8a74063df78085b353abff8f9ff15.png" Reference="y4ypWjSc8U6u3AfBQdopog/XkU9BcxRLkuGynY8Ny8Vdw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com/login' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NClick.Target>
@@ -482,7 +514,7 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Station Report'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Station Report'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,48" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="48261efd-edfa-4640-ab35-23cfdca1c1a1" ContentHash="ULc8xLm-kkiDTEfTFGr8GA" CvTextArea="1627, 380, 91, 16" CvTextArgument="Station Report" CvType="Text" DesignTimeRectangle="1629, 379, 88, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Station Report' parentid='popover-body-3' tag='P' type='' class='chakra-text css-itvw0n' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Station Report' /&gt;" Guid="1bfa0e89-2fdb-4d94-9dbe-16f0af074d02" InformativeScreenshot="250734011ec7d9d4a288c852f1209938.png" Reference="y4ypWjSc8U6u3AfBQdopog/HJ5Dh_n3wk-unmhwTI1Plw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com/login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -503,7 +535,7 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NTypeInto_14" InteractionMode="SameAsCard" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Text="[DateForm]" Version="V5">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,48" sap2010:WorkflowViewState.IdRef="NTypeInto_14" InteractionMode="SameAsCard" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Text="[DateForm]" Version="V5">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="d3a64b05-0e9d-4378-8f59-895b1d44a018" ContentHash="QeMGgLwsX0y2c4Dub-xgDQ" CvElementArea="703, 292, 262, 43" CvType="InputBox" DesignTimeRectangle="721, 295, 226, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" Guid="c9a97ac9-5d93-474e-b816-7ca32e4c5125" InformativeScreenshot="f2a1b16aae05740c1088f7b0410f33fb.png" Reference="y4ypWjSc8U6u3AfBQdopog/f7ODzqa8W0atQdoMrx0krA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com/login' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NTypeInto.Target>
@@ -518,7 +550,7 @@
                   </uix:VerifyExecutionTypeIntoOptions>
                 </uix:NTypeInto.VerifyOptions>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT(1)'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NTypeInto_15" InteractionMode="SameAsCard" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Text="[DateTo]" Version="V5">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT(1)'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,48" sap2010:WorkflowViewState.IdRef="NTypeInto_15" InteractionMode="SameAsCard" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Text="[DateTo]" Version="V5">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="d3a64b05-0e9d-4378-8f59-895b1d44a018" ContentHash="5RxBZmRU8k-UDvYFFC75wA" CvElementArea="970, 292, 263, 43" CvType="InputBox" DesignTimeRectangle="989, 295, 226, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl name='date_to' tag='INPUT' /&gt;" Guid="9a5a6d7b-7bcf-469c-af1f-8bf8e51bbb52" InformativeScreenshot="d9c397f10a1715f691b69136f3260998.png" Reference="y4ypWjSc8U6u3AfBQdopog/nFc983QCWkKWXS80f2Cn8g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com/login' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NTypeInto.Target>
@@ -533,7 +565,7 @@
                   </uix:VerifyExecutionTypeIntoOptions>
                 </uix:NTypeInto.VerifyOptions>
               </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Station Report(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Station Report(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,48" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="e139dd8d-2638-4558-a69b-a6ae9493e0ee" ContentHash="4L1QKV20J0GdUo-lHUAozA" CvElementArea="1217, 188, 22, 22" CvTextArea="703, 199, 134, 22" CvTextArgument="Station Report" CvType="CloseButton" DesignTimeRectangle="680, 176, 576, 62" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='chakra-modal--header-13' tag='HEADER' /&gt;" Guid="003545fc-6bc1-45e2-a04e-a8c7bd4eb5e8" InformativeScreenshot="c487b4cdcc1530592cb44944813fb4ba.png" Reference="y4ypWjSc8U6u3AfBQdopog/Gc9MudgP_E2m_e_mB6d40g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NClick.Target>
@@ -548,7 +580,7 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <uix:NSelectItem DisplayName="Select Item 'Station*'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="OQC_OBE_TEST_IN" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
+              <uix:NSelectItem DisplayName="Select Item 'Station*'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,48" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="OQC_OBE_TEST_IN" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
                 <uix:NSelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="50">
                     <x:String>ACOS</x:String>
@@ -613,123 +645,166 @@
                   </uix:TargetAnchorable>
                 </uix:NSelectItem.Target>
               </uix:NSelectItem>
-              <uix:NSelectItem DisplayName="Select Item 'Project*'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="CX1101CMA" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
-                <uix:NSelectItem.Items>
-                  <scg:List x:TypeArguments="x:String" Capacity="28">
-                    <x:String>90PF05U1-M00060FG</x:String>
-                    <x:String>AIO</x:String>
-                    <x:String>ASUS_SN_TEST</x:String>
-                    <x:String>B1402</x:String>
-                    <x:String>B1402CBA</x:String>
-                    <x:String>B1402CVA</x:String>
-                    <x:String>B1403CTA USA</x:String>
-                    <x:String>B1403CVA USA</x:String>
-                    <x:String>B1503CTA USA</x:String>
-                    <x:String>B1503CVA</x:String>
-                    <x:String>B1503CVA USA</x:String>
-                    <x:String>BG1409CVA/B1403CVA</x:String>
-                    <x:String>CM1402FM2A USA</x:String>
-                    <x:String>CR</x:String>
-                    <x:String>CR1100CKA</x:String>
-                    <x:String>CR1104CTA_ID</x:String>
-                    <x:String>CX1101CMA</x:String>
-                    <x:String>CX3402CVA USA</x:String>
-                    <x:String>CZ1104CM2A USA</x:String>
-                    <x:String>Desktop</x:String>
-                    <x:String>DG500MER</x:String>
-                    <x:String>P1403CVA (USA)</x:String>
-                    <x:String>P1412</x:String>
-                    <x:String>P1412CEA</x:String>
-                    <x:String>P1503CVA USA</x:String>
-                    <x:String>P440VA_ID (PG440VA)</x:String>
-                    <x:String>P500MV_ID(PG500MV)</x:String>
-                    <x:String>P500MW</x:String>
-                  </scg:List>
-                </uix:NSelectItem.Items>
-                <uix:NSelectItem.Target>
-                  <uix:TargetAnchorable BrowserURL="nusames.asusnb.satnusa.com" CVScreenId="73816709-0fb2-41bc-b4ca-6a0f999c57ed" ContentHash="47y51ivf2kqm5K2vA86fJQ" CvElementArea="970, 372, 264, 43" CvType="InputBox" DesignTimeRectangle="972, 374, 260, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class=' css-xcnfi-control' parentid='chakra-modal--body-13' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="5b82f4d4-b797-4f7e-9db1-ccdb9af0e02d" InformativeScreenshot="cfad830ce00c9a3590fe964d33fac7ef.png" IsResponsive="True" Reference="y4ypWjSc8U6u3AfBQdopog/jdD6HzsvNUmf34CZ50HIyQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="73816709-0fb2-41bc-b4ca-6a0f999c57ed" CvTextArea="971, 346, 63, 19" CvTextArgument="Project *" CvType="Text" DesignTimeRectangle="972, 342, 248, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Project' tag='LABEL' type='' class='chakra-form__label css-2gx1h6' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Project*' /&gt;" Guid="8808804a-dcc2-4f44-a858-433ca81c7557" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NSelectItem.Target>
-              </uix:NSelectItem>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="b7a1d3d5-eee9-47bb-a997-a2b54afde97f" ContentHash="oCcdPTPoMkC-0EfFM31H3Q" CvElementArea="1124, 436, 109, 44" CvTextArea="1141, 450, 75, 15" CvTextArgument="Download" CvType="Button" DesignTimeRectangle="1126, 438, 106, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" Guid="f0da3c95-3d12-4233-ae8b-d8ccd36c28ac" InformativeScreenshot="9dc649a8869fb17e023a578e257320ab.png" Reference="y4ypWjSc8U6u3AfBQdopog/_Xw_zUDHfUSFwT2WruFuXw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                </uix:NClick.Target>
-                <uix:NClick.VerifyOptions>
-                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                    <uix:VerifyExecutionOptions.Retry>
-                      <InArgument x:TypeArguments="x:Boolean" />
-                    </uix:VerifyExecutionOptions.Retry>
-                    <uix:VerifyExecutionOptions.Timeout>
-                      <InArgument x:TypeArguments="x:Double" />
-                    </uix:VerifyExecutionOptions.Timeout>
-                  </uix:VerifyExecutionOptions>
-                </uix:NClick.VerifyOptions>
-              </uix:NClick>
-              <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="510,528" sap2010:WorkflowViewState.IdRef="RetryScope_4">
-                <ui:RetryScope.ActivityBody>
-                  <ActivityAction>
-                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="510,360" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <uix:NCheckState DisplayName="Check App State 'TypeError'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="480,312" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
-                        <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="480,144" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="x:String" Name="outputFailed" />
-                            </Sequence.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <uix:NGetText DisplayName="Get Text 'Failed to fetch'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" TextString="[outputFailed]" Version="V5">
-                              <uix:NGetText.Target>
-                                <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" ContentHash="dWVkb7YY_UeYEFN2CxZ6ig" DesignTimeRectangle="68, 992, 220, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='9' tag='DIV' type='' class='chakra-alert__desc css-zycdy9' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="939e8f39-5851-46c6-93f4-52a5202414fb" InformativeScreenshot="a8bd3494afe99e0812e3cfd029c67573.png" Reference="y4ypWjSc8U6u3AfBQdopog/P_9S0jtoR0GkKlLww_ueyg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
-                              </uix:NGetText.Target>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </uix:NGetText>
-                            <Throw Exception="[New Exception(outputFailed)]" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Throw_2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Throw>
-                          </Sequence>
-                        </uix:NCheckState.IfExists>
-                        <uix:NCheckState.IfNotExists>
-                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Sequence>
-                        </uix:NCheckState.IfNotExists>
-                        <uix:NCheckState.Target>
-                          <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="ae0a2603-865b-43a8-9f76-49f39e04aecd" ContentHash="8aHmInZXzEKtRBSnvekr2Q" CvElementArea="21, 954, 300, 76" CvTextArea="66, 973, 77, 18" CvTextArgument="TypeError" CvType="Button" DesignTimeRectangle="68, 968, 212, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='TypeError' parentid='8' tag='DIV' /&gt;" Guid="e525ade7-7baa-4de0-9c5e-dbc936b97c20" InformativeScreenshot="531d1f1e5d77468f00585cc8756cf84e.png" Reference="y4ypWjSc8U6u3AfBQdopog/tSnzWZkdjkmi7dgdbz2IGA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                        </uix:NCheckState.Target>
-                      </uix:NCheckState>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:RetryScope.ActivityBody>
-                <ui:RetryScope.Condition>
-                  <ActivityFunc x:TypeArguments="x:Boolean" />
-                </ui:RetryScope.Condition>
-              </ui:RetryScope>
+              <Sequence DisplayName="Loop Model" sap:VirtualizedContainerService.HintSize="570,960" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="s:String[]" Name="modelList" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ReadFromReportOBAOBE - Invoke Workflow File (Proccess\ReadFromReportOBAOBE.xaml)" sap:VirtualizedContainerService.HintSize="540,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Proccess\ReadFromReportOBAOBE.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <OutArgument x:TypeArguments="s:String[]" x:Key="modelList_Out">[modelList]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="excelFileSource_In">[fileResultOBAOBEReport]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="env_In">[env_In]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="540,840" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[modelList]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:String">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,768" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Procced: &quot; &amp; currentText]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
+                        <uix:NSelectItem DisplayName="Select Item 'Project*'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[currentText]" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
+                          <uix:NSelectItem.Items>
+                            <scg:List x:TypeArguments="x:String" Capacity="28">
+                              <x:String>90PF05U1-M00060FG</x:String>
+                              <x:String>AIO</x:String>
+                              <x:String>ASUS_SN_TEST</x:String>
+                              <x:String>B1402</x:String>
+                              <x:String>B1402CBA</x:String>
+                              <x:String>B1402CVA</x:String>
+                              <x:String>B1403CTA USA</x:String>
+                              <x:String>B1403CVA USA</x:String>
+                              <x:String>B1503CTA USA</x:String>
+                              <x:String>B1503CVA</x:String>
+                              <x:String>B1503CVA USA</x:String>
+                              <x:String>BG1409CVA/B1403CVA</x:String>
+                              <x:String>CM1402FM2A USA</x:String>
+                              <x:String>CR</x:String>
+                              <x:String>CR1100CKA</x:String>
+                              <x:String>CR1104CTA_ID</x:String>
+                              <x:String>CX1101CMA</x:String>
+                              <x:String>CX3402CVA USA</x:String>
+                              <x:String>CZ1104CM2A USA</x:String>
+                              <x:String>Desktop</x:String>
+                              <x:String>DG500MER</x:String>
+                              <x:String>P1403CVA (USA)</x:String>
+                              <x:String>P1412</x:String>
+                              <x:String>P1412CEA</x:String>
+                              <x:String>P1503CVA USA</x:String>
+                              <x:String>P440VA_ID (PG440VA)</x:String>
+                              <x:String>P500MV_ID(PG500MV)</x:String>
+                              <x:String>P500MW</x:String>
+                            </scg:List>
+                          </uix:NSelectItem.Items>
+                          <uix:NSelectItem.Target>
+                            <uix:TargetAnchorable BrowserURL="nusames.asusnb.satnusa.com" CVScreenId="73816709-0fb2-41bc-b4ca-6a0f999c57ed" ContentHash="47y51ivf2kqm5K2vA86fJQ" CvElementArea="970, 372, 264, 43" CvType="InputBox" DesignTimeRectangle="972, 374, 260, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class=' css-xcnfi-control' parentid='chakra-modal--body-13' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="5b82f4d4-b797-4f7e-9db1-ccdb9af0e02d" InformativeScreenshot="cfad830ce00c9a3590fe964d33fac7ef.png" IsResponsive="True" Reference="y4ypWjSc8U6u3AfBQdopog/jdD6HzsvNUmf34CZ50HIyQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="73816709-0fb2-41bc-b4ca-6a0f999c57ed" CvTextArea="971, 346, 63, 19" CvTextArgument="Project *" CvType="Text" DesignTimeRectangle="972, 342, 248, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Project' tag='LABEL' type='' class='chakra-form__label css-2gx1h6' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Project*' /&gt;" Guid="8808804a-dcc2-4f44-a858-433ca81c7557" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NSelectItem.Target>
+                        </uix:NSelectItem>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="b7a1d3d5-eee9-47bb-a997-a2b54afde97f" ContentHash="oCcdPTPoMkC-0EfFM31H3Q" CvElementArea="1124, 436, 109, 44" CvTextArea="1141, 450, 75, 15" CvTextArgument="Download" CvType="Button" DesignTimeRectangle="1126, 438, 106, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' /&gt;" Guid="f0da3c95-3d12-4233-ae8b-d8ccd36c28ac" InformativeScreenshot="9dc649a8869fb17e023a578e257320ab.png" Reference="y4ypWjSc8U6u3AfBQdopog/_Xw_zUDHfUSFwT2WruFuXw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="510,528" sap2010:WorkflowViewState.IdRef="RetryScope_4">
+                          <ui:RetryScope.ActivityBody>
+                            <ActivityAction>
+                              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="510,360" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheckState DisplayName="Check App State 'TypeError'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="480,312" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" Version="V5">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="480,144" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NGetText DisplayName="Get Text 'Failed to fetch'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b9aa9cbf-dda3-40f0-a1d8-c8706f32c3b1" TextString="[outputFailed]" Version="V5">
+                                        <uix:NGetText.Target>
+                                          <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" ContentHash="dWVkb7YY_UeYEFN2CxZ6ig" DesignTimeRectangle="68, 992, 220, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='9' tag='DIV' type='' class='chakra-alert__desc css-zycdy9' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="939e8f39-5851-46c6-93f4-52a5202414fb" InformativeScreenshot="a8bd3494afe99e0812e3cfd029c67573.png" Reference="y4ypWjSc8U6u3AfBQdopog/P_9S0jtoR0GkKlLww_ueyg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
+                                        </uix:NGetText.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NGetText>
+                                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[&quot;Model name: &quot; &amp; currentText &amp; &quot; err:&quot; &amp; outputFailed]" List="[listFailedDownload]" />
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="nusames-asusnb.dev.xiaomi.satnusa.com" CVScreenId="ae0a2603-865b-43a8-9f76-49f39e04aecd" ContentHash="8aHmInZXzEKtRBSnvekr2Q" CvElementArea="21, 954, 300, 76" CvTextArea="66, 973, 77, 18" CvTextArgument="TypeError" CvType="Button" DesignTimeRectangle="68, 968, 212, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='TypeError' parentid='8' tag='DIV' /&gt;" Guid="e525ade7-7baa-4de0-9c5e-dbc936b97c20" InformativeScreenshot="531d1f1e5d77468f00585cc8756cf84e.png" Reference="y4ypWjSc8U6u3AfBQdopog/tSnzWZkdjkmi7dgdbz2IGA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames-asusnb.dev.xiaomi.satnusa.com' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheckState.Target>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:RetryScope.ActivityBody>
+                          <ui:RetryScope.Condition>
+                            <ActivityFunc x:TypeArguments="x:Boolean" />
+                          </ui:RetryScope.Condition>
+                        </ui:RetryScope>
+                        <Throw Exception="[New Exception(outputFailed)]" sap:VirtualizedContainerService.HintSize="510,48" sap2010:WorkflowViewState.IdRef="Throw_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Throw>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+              </Sequence>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="6CQb5DcoRkysnlxkWNEK8A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.asusnb.satnusa.com" CVScreenId="9a7383f3-a8bf-4c2d-afc0-e8c5b239145e" CvElementArea="883, 113, 97, 55" CvTextArea="912, 134, 36, 16" CvTextArgument="Login" CvType="Button" DesignTimeRectangle="913, 133, 35, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Login' parentid='__next' tag='P' /&gt;" Guid="e720430d-f796-4feb-837e-3587f2dd5e06" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="cc3e53dc2da3b956d91415ff2afd630f.png" xmlns="">0R8s0Opn8v0eBexdQGLOkow</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

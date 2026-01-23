@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Jesi1EIR4kG3O91V9mm9kw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.asusnb.satnusa.com/login" CVScreenId="e9206000-f351-457c-9bb1-a5b22541b8ff" CvElementArea="773, 574, 389, 44" CvType="InputBox" DesignTimeRectangle="775, 576, 386, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='' class='chakra-input css-1c6j008' placeholder='Username' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="f64b68e5-f9cc-4fdb-a4f1-7f7ca093f529" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501/login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="e9206000-f351-457c-9bb1-a5b22541b8ff" CvTextArea="774, 549, 85, 14" CvTextArgument="Username *" CvType="Text" DesignTimeRectangle="775, 544, 374, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='chakra-form__label css-2gx1h6' aaname='Username' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username*' /&gt;" Guid="0caa269a-40ee-4406-9596-a7de3e242c7a" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="5085cc5f903ab05f5bab83b99d8be77d.png" xmlns="">0fSDmXoaRVUiCchochWYIfg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

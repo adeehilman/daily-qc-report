@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="D_iPEDieE0aKd6BmKj3Qvg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAODSURBVFhHpZfJaxRBFIdbD2pccMEtGEky0zF6iH+DIBg3YvCkB/EmcRu3o4eAiOhBwZsiLiiIipBRQRQXFA/Rg6KIohd3RRERcR3379dTlanpqZ7p0Qcf6Xn9Xv3eq+6uqgRtuVNBmMuL0bASrsMn+AEvYB/MzKzsi+JqmWJmrDitvx2wF56DxtKYN2AVjAFiThUToAmOwjf44+EBdLWsyQ/KVimCmCC7KSp0PtwH31gFOAZTIUpS5xL3Bbu8gsWNPYh4iuBe0LYkaqYbNHO+MVyOwxgl9MBX46zFS+he2lteRHZdPrjZEIkvgjTiQrO9WknXHGcaJLAo3BwJRuIdzArXXeaeLyeJfiW+iznTIKGucEM+aF8TiS8EvWy+2Gp8UHLa6Y9TnIlcfgE8M756KaiApDc/DW/gdcxXD/9dQBK/QJ/hCTgLb8EXl7oAfbu34LPjS0Kxu6EpXJsfzN8hMAtuQ0VsmgJ+gla0RtgC1eIlvh2GQ/SJhrniCgp6X+IN1CxA4nvALJ35BtgKvpzvUCZuTb9hItwDN6dqAbbzSNwZyBahbm1sReeuyQcT4C64GokF6CUqE7em36AitoG6TuxcpoVKfpgLH8HV8RYgce2AFeLW5AcJqggxQr64hSXx6dAPro6oKEDi+2EsmGH8pr0AhhqMt2SOeDskLfdlBaQWr2WO+DS4CnFhy0ABVnwcBNm1fWao+i2zvkz8CviELVEB+jYPgLfzrDkxZVlUIMhAkjnibVBLXEQF7IDxYIYpmY5M8sMU6AV15S0iU5r2EC6DTzBOQS/SMC7MMCULc2fsgJPhJCjhEmQhyLANW3M61z3FxIWSKJghyi3MRYdKMQm0obhJFyADAWu923mruefG1qKyAGfhkLgOj78hnighCdrYFjgP8bhalBegjnAKrdtJ4hZbRDOcM756KRXgfLvVOo+j0/SRmK8eigU0bxzYMtN0bnkMWt/nwCPjq5dC0MrBkot/Ee90/qtSEfL5Yqvx3g6grVLTmUb8CdD5gDhE151QbxHXlDgSDjnOajyFeRAJW7O/QY9EBfpy43yBFUrStnrQOKuho7eO4GXi1qwf0j6OwzDKJunN12bkO3TqsdwBBi5Oe5LpnvmaZoMOob5Hqs7VsM6YTmLxUSyDi6BjtE4vD2EXtLeZz7SWKcbEakPaCRpDY2lMLdPLQVpBU09f8BfAPsrLzUX0kgAAAABJRU5ErkJggg==" Selector="&lt;html app='msedge.exe' title='nusames.dev.xiaomi.satnusa.com/login?redirect=/' /&gt;" Url="[urlNusames + &quot;/login?redirect=/&quot;]" Version="V2">
+      <imageRef attrName="InformativeScreenshot" originalValue="c52d4c95364dbb3771572f7466f6b06e.jpg" xmlns="">0f4pXZAKiS0q6orLlaWXtVA</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="urlNusames" />
+    </scg:List>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

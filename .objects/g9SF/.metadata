@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge nusames-xiaomi.dev.xiaomi.satnusa.comlog",
+  "Type": "App",
+  "Id": "g9SFv7ob60Oq1K00OXepoQ",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/g9SFv7ob60Oq1K00OXepoQ",
+  "Created": "2026-01-23T04:14:05.4413148Z",
+  "Updated": "2026-01-23T04:14:05.4413148Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
