@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OwpLGK2DtkKkqtR1T9Y-sw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.asusnb.satnusa.com" CVScreenId="9de51db1-d5be-4eac-8a5a-36074ef6d398" CvElementArea="970, 459, 330, 55" CvType="InputBox" DesignTimeRectangle="995, 469, 237, 35" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' class=' css-ackcql' parentid='chakra-modal--body-13' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="1c0bc71f-b7ba-4a5b-b8ba-e0604beaf8e9" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9de51db1-d5be-4eac-8a5a-36074ef6d398" CvTextArea="973, 428, 78, 22" CvTextArgument="Project *" CvType="Text" DesignTimeRectangle="974, 422, 310, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Project' tag='LABEL' type='' class='chakra-form__label css-2gx1h6' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Project*' /&gt;" Guid="904344b4-47ac-41a1-87ae-d8382295a74e" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b6a6462c95e009a83f6291515bae066d.png" xmlns="">0EjbwJaYNKE-BHis8ZSI0Tw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

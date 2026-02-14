@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Bas3EKZkkUCMPSSfjlPyWQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.asusnb.satnusa.com" CVScreenId="a5d3b253-15e4-4d80-841f-497c0383257b" CvElementArea="604, 580, 729, 82" CvType="InputBox" DesignTimeRectangle="603, 581, 730, 81" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="8c26630b-821b-4397-aae7-5127a11ea449" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='nusames.asusnb.satnusa.com:30501' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="a5d3b253-15e4-4d80-841f-497c0383257b" CvTextArea="605, 535, 159, 26" CvTextArgument="Username *" CvType="Text" DesignTimeRectangle="606, 535, 159, 26" ElementType="Text" Guid="ced96406-a991-4e40-bba6-a06bcb75f8cf" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="ed97dc93117d59792287defefdf3f3df.png" xmlns="">04dmGx3RT5kOoTM0Y2KT5iA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

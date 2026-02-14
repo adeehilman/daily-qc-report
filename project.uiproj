@@ -1,5 +1,5 @@
 {
-  "Name": "RPA_Xiaomi Daily QC Report",
+  "Name": "RPA_Asus Daily QC Report",
   "ProjectType": "Process",
   "Description": "Blank Process",
   "MainFile": "Main.xaml"

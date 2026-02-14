@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Welcome to Asus Noteboo…",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "2EU_K3T7HUCZTcbT3k49ZA",
+  "Reference": "y4ypWjSc8U6u3AfBQdopog/2EU_K3T7HUCZTcbT3k49ZA",
+  "ParentRef": "y4ypWjSc8U6u3AfBQdopog/2lF1YGvGiUSg2CeWLTCEmA",
+  "Created": "2026-02-06T10:37:26.5536105Z",
+  "Updated": "2026-02-06T10:37:26.5536105Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.16.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
