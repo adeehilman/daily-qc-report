@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="9ITu3IlKgUSBK6U6dQJGNA" Reference="y4ypWjSc8U6u3AfBQdopog/igIsyUdQKU6AiNpmUnKngQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="nusames.asusnb.satnusa.com" CVScreenId="232c9456-bf74-4b92-843a-ace7fc236889" CvTextArea="69, 73, 265, 15" CvTextArgument="What do you want to do with Station_Report.xlsx?" CvType="Text" DesignTimeRectangle="71, 71, 263, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Station_Report.xlsx' role='outline item' /&gt;&lt;ctrl name='What do you want to do with Station_Report.xlsx?' role='text' /&gt;" Guid="56c0beea-8291-44f9-a187-8e1cbe79db70" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="571f0d19-875e-4608-a860-8eb9b65efff1" CvElementArea="132, 90, 68, 24" CvTextArea="146, 97, 40, 11" CvTextArgument="Save as" CvType="Button" DesignTimeRectangle="132, 90, 68, 24" ElementType="Text" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Station_Report.xlsx' role='outline item' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Save as' role='push button' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Save as' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Save as' /&gt;" Guid="4899cb20-09ff-45be-bc9c-3cbf7fcb07c7" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="e557acc4e229aaff43b823e9971df707.png" xmlns="">0vDa3n31CCUmZvI3ZmaXCsg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
